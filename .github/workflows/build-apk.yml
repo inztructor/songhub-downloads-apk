@@ -35,7 +35,6 @@ jobs:
       - name: Generate Android project
         run: npx cap add android
 
-      
       - name: Generate app icon
         run: |
           npm install --no-save @capacitor/assets
@@ -43,6 +42,16 @@ jobs:
 
       - name: Sync app files
         run: npx cap sync android
+
+      - name: Check generated Android project
+        run: |
+          echo "Checking Capacitor WebView window handling..."
+
+          grep -R -n \
+            -E "setSupportMultipleWindows|setJavaScriptCanOpenWindowsAutomatically|onCreateWindow" \
+            android/capacitor/src/main/java \
+            android/app/src/main/java \
+            2>/dev/null || true
 
       - name: Build APK
         run: |
