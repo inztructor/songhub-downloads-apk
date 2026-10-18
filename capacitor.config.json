@@ -1,0 +1,14 @@
+{
+  "appId": "com.songhubdownloads.app",
+  "appName": "SongHub Downloads",
+  "webDir": "www",
+  "server": {
+    "allowNavigation": [
+      "songhubdownloads.blogspot.com",
+      "*.blogspot.com",
+      "*.blogger.com",
+      "*.google.com",
+      "*.googleusercontent.com"
+    ]
+  }
+}
